@@ -45,17 +45,17 @@ class Grid extends React.Component {
     return (
       <div>
         <h1>Tic Tac Toe</h1>
-        <div>
+        <div className="grid-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
         </div>
-        <div>
+        <div className="grid-row">
           {this.renderSquare(3)}
           {this.renderSquare(4)}
           {this.renderSquare(5)}
         </div>
-        <div>
+        <div className="grid-row">
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
@@ -78,9 +78,9 @@ function calculateWinner(letters) {
     [2, 4, 6],
   ];
   for (let i = 0; i < rows.length; i++) {
-    const [a, b, c] = rows[i];
-    if (letters[a] && letters[a] === letters[b] && letters[a] === letters[c]) {
-      return letters[a];
+    const [x, y, z] = rows[i];
+    if (letters[x] && letters[x] === letters[y] && letters[x] === letters[z]) {
+      return letters[x];
     }
     return null;
   }
